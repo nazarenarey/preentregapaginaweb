@@ -1,0 +1,743 @@
+/**
+* Template Name: Techie
+* Template URL: https://bootstrapmade.com/techie-free-skin-bootstrap-3/
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* -------------------------------------------
+   LIMPIEZA DE CSS GLOBAL
+----------------------------------------------*/
+body {
+  overflow-x: hidden;
+}
+:root {
+  --default-font: "Roboto", sans-serif;
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Roboto", sans-serif;
+
+  --background-color: #ffffff;
+  --default-color: #444444;
+  --heading-color: #2c4964;
+  --accent-color: #5846f9;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+
+  --nav-color: rgba(255, 255, 255, 0.8);
+  --nav-hover-color: #ffffff;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #444444;
+  --nav-dropdown-hover-color: #5846f9;
+
+  scroll-behavior: smooth;
+}
+
+.light-background {
+  --background-color: #f9f8ff;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #060606;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #202020;
+  --contrast-color: #ffffff;
+}
+
+.accent-background {
+  --background-color: #5846f9;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #ffffff;
+  --surface-color: #7c25ba;
+  --contrast-color: #ffffff;
+}
+
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+/* -------------------------------------------
+   HEADER
+----------------------------------------------*/
+
+.header {
+  background-color: rgba(0, 0, 0, 0.449);
+  padding: 20px 0;
+  transition: all 0.5s;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+}
+
+.header .logo img {
+  max-height: 36px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 30px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.header .btn-getstarted {
+  color: var(--contrast-color);
+  font-size: 14px;
+  padding: 7px 25px;
+  margin-left: 30px;
+  border-radius: 4px;
+  transition: 0.3s;
+  border: 2px solid color-mix(in srgb, var(--contrast-color), transparent 50%);
+}
+
+.header .btn-getstarted:hover {
+  border-color: var(--contrast-color);
+}
+
+.scrolled .header {
+  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* -------------------------------------------
+   NAVIGATION MENU
+----------------------------------------------*/
+
+.navmenu {
+  padding: 0;
+}
+
+.navmenu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navmenu li {
+  position: relative;
+  padding: 15px 14px;
+}
+
+.navmenu li:last-child {
+  padding-right: 0;
+}
+
+.navmenu a {
+  color: var(--nav-color);
+  font-size: 16px;
+  font-family: var(--nav-font);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  position: relative;
+}
+
+.navmenu a:hover,
+.navmenu .active {
+  color: var(--nav-hover-color);
+}
+
+.navmenu a:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: var(--nav-hover-color);
+  visibility: hidden;
+  width: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.navmenu a:hover:before,
+.navmenu .active:before {
+  visibility: visible;
+  width: 100%;
+}
+
+/* -------------------------------------------
+   SCROLL TO TOP
+----------------------------------------------*/
+
+.scroll-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  background-color: var(--accent-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99999;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* -------------------------------------------
+   SECTION STYLES
+----------------------------------------------*/
+
+section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  scroll-margin-top: 92px;
+  overflow: clip;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Inicio Section
+--------------------------------------------------------------*/
+/* INICIO SECTION */
+.inicio {
+  background-color: #000d14;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-superpuesto {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 1000px;
+}
+
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: rotate(-5deg);
+}
+
+.texto-superpuesto {
+  position: absolute;
+  bottom: 60%; /* Ajustá este valor para subir o bajar el texto */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%; /* Caja de texto más larga */
+  color: white;
+  text-align: center;
+}
+
+.texto-superpuesto h1 {
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 80px;
+  
+}
+
+.texto-superpuesto h1 strong {
+  font-weight: 750;
+}
+
+/*--------------------------------------------------------------
+# Caracteristicas Section
+--------------------------------------------------------------*/
+.caracteristicas {
+  background-color: #000d14;
+  padding: 0px 10px;
+  padding-bottom: 100px;
+  color: #ffffff;
+}
+
+.icono-caracteristica {
+  display: block;
+  margin: 0 auto 50px auto;
+}
+
+/* Ajustes individuales */
+.icono-camara {
+  height: 45px;
+}
+
+.icono-horizon {
+  height: 35px;
+  margin-bottom: 60px;
+}
+
+.icono-estabilidad {
+  height: 46px;
+  margin-bottom: 52px;
+}
+
+.icono-montaje {
+  height: 48px;
+}
+.caracteristicas h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.caracteristicas p {
+  font-family: 'inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+/*--------------------------------------------------------------
+# LENTE  Section
+--------------------------------------------------------------*/
+
+
+.seccion-gopro {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  z-index: 10; /* para que esté sobre otras secciones */
+  overflow: visible;
+  background-color: #000d14;
+}
+
+.fondo-imagen-lente {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 800px;
+  object-fit: contain;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateX(40px) translateY(-250px);
+}
+.texto-encima {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 550px;
+  padding: 0 30px;
+  z-index: 2;
+}
+.texto-encima h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.texto-encima p {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+/*--------------------------------------------------------------
+# GO PRO CON ESPECIFICACIONES  Section
+--------------------------------------------------------------*/
+
+.gopro-detalles {
+  background-color: #efefef;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+
+.gopro-titulos h2 {
+  font-family: 'inter', sans-serif;
+  color: #000d14;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.gopro-titulos p {
+  font-family: 'inter', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #000d14;
+}
+
+.gopro-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Para mobile */
+}
+
+.columna-iconos-izq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 250px;
+}
+.columna-iconos-der {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 250px;
+}
+
+
+.columna-imagen img {
+  width: 500px;
+  height: auto;
+}
+
+.detalle {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detalle img {
+  width: 40px;
+  
+  
+}
+
+.detalle h3 {
+  font-family: 'inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #000d14;
+}
+
+.detalle p {
+  font-size: 0.95rem;
+  color: #000d14;
+  font-family: 'inter', sans-serif;
+}
+
+.icono-detalle {
+  display: block;
+  margin-bottom: 16px;
+  height: 44px;
+  object-fit: contain;
+}
+
+
+/*--------------------------------------------------------------
+# BANNER CON CARCT DE NUMEROS
+--------------------------------------------------------------*/
+
+.gopro-banner {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Ajustá según el tamaño de tu imagen */
+  overflow: hidden;
+}
+
+.banner-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: #05965271;
+}
+
+.banner-textos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.texto-bloque h3 {
+  font-family: 'inter', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0;
+}
+.texto-bloque{
+  width: 260px;
+}
+
+.texto-bloque p {
+  font-family: 'inter', sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Línea divisora blanca entre textos */
+.barra-divisora {
+  width: 2px;
+  height: 60px;
+  background-color: white;
+}
+/*--------------------------------------------------------------
+# DEPORTES Q HACER CON LA GOPRO
+--------------------------------------------------------------*/
+.gopro-deportes {
+  background-color: #efefef;
+  padding: 140px 20px;
+  text-align: center;
+}
+.deportes-titulos{
+  width:630px;
+  margin: 0 auto; /* ✅ Esto la centra horizontalmente */
+}
+
+.deportes-titulos h2 {
+  font-family: 'inter', sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.deportes-titulos p {
+  font-family: 'inter', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: black;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.deportes-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* 🔥 ESTO alinea todas al eje Y */
+  gap: 30px;
+}
+
+.card-deporte {
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: transparent; /* ✅ Fondo transparente en la card */
+}
+
+.imagen-deporte img {
+  width: 100%;
+  display: block;
+  border-radius: 10px 10px 0 0; /* Opcional: bordes redondeados arriba */
+}
+
+.contenido-deporte {
+  background-color: #000d14; /* ✅ Fondo oscuro solo para el contenido */
+  color: white;
+  padding: 30px 20px 20px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 0 0 10px 10px; /* Opcional: redondeo abajo */
+}
+
+.contenido-deporte h3 {
+  font-family: 'inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.contenido-deporte p {
+  font-family: 'inter', sans-serif;
+  font-size: 0.95rem;
+  color: #ddd;
+}
+.imagen-deporte {
+  height: 200px; /* o el alto que quieras */
+  overflow: hidden;
+}
+
+.imagen-deporte img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+
+/*--------------------------------------------------------------
+# SECCION DE GO PRO OCEANO
+--------------------------------------------------------------*/
+
+.seccion-oceano {
+  width: 100%;
+  overflow: hidden;
+}
+
+.fondo-imagen-oceano {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/*--------------------------------------------------------------
+# SECCION DEL IPHONES APLICACIONES
+--------------------------------------------------------------*/
+.aplicaciones{
+  background-color: #010d15;
+  padding:140px 50px;
+}
+.contenedor-iphone{
+  display: flex;
+}
+.texto-iphone{
+  padding-top: 150px;
+}
+h2{
+  font-family: 'inter', sans-serif;
+  color: white;
+  font-size: 70px;
+  font-weight: 700;
+}
+p{
+  font-family: 'inter', sans-serif;
+  color: white;
+  font-size: 14px;
+  padding-bottom: 30px;
+}
+
+/*--------------------------------------------------------------
+# FOOTER
+--------------------------------------------------------------*/
+
+.footer-gopro {
+  background-color: #000d14;
+  color: #ffffff;
+  padding: 60px 20px;
+  font-family: 'inter', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.footer-col h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.footer-col ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-branding {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.logo-footer {
+  width: 100px;
+}
+
+.footer-redes img {
+  width: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.footer-redes img.facebooklogo {
+  width: 16px;
+  height: auto;
+}
+
+
